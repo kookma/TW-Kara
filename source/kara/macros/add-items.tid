@@ -1,0 +1,36 @@
+created: 20220727183257363
+modified: 20220728160923172
+tags: show-content
+title: $:/plugins/kookma/kara/macros/add-items
+type: text/vnd.tiddlywiki
+
+<!-- this tiddler contains common macros for both checklist and interstitial -->
+
+\define tempTid()   $:/temp/kara/add-item/$(tempId)$
+
+\define kara-input-item()
+<$keyboard key="escape" actions=<<kara-cancel-action>>   >
+<$keyboard key="enter"  actions=<<kara-add-item-action>> >
+<$edit-text 
+ tiddler=<<tempTid>> 
+ tag="input"
+ class="kk-kara-input-textbox"
+ placeholder="add new item"
+ default="" minHeight="1em" focus="yes"
+ />
+</$keyboard> 
+</$keyboard> 
+\end
+
+
+\define kara-cancel-action()
+<$action-deletetiddler $tiddler=<<tempTid>>/>
+\end
+
+
+\define kara-add-items()
+<div class="kk-kara-header-ui">
+<div class="kk-kara-header-textbox"><<kara-input-item>></div>
+<div><$button class="tc-btn-invisible" actions=<<kara-add-item-action>> disabled={{{ [<tempTid>get[text]!is[blank]then[no]else[yes]] }}}>{{$:/core/images/new-button}}</$button></div>
+</div>
+\end

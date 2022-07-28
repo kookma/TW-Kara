@@ -1,0 +1,30 @@
+.kk-kara-header-ui{
+	display: flex;
+	width: 100%;
+}
+.kk-kara-header-ui > div{
+	margin: 2px;
+	flex-grow:0;	
+}
+.kk-kara-header-ui .kk-kara-header-textbox{
+	flex-grow:1;	
+}
+
+/* inputbox for add-task */
+.kk-kara-input-textbox {
+	width:100%;
+	padding-left: 5px;
+	border: none;
+	border-bottom: 1px dotted grey;
+}
+
+.kk-kara-input-textbox:focus {
+	outline: none;
+	border-bottom: 1px solid #5778d8;
+	background: transparent;
+}
+
+/* for performance reason and loss of focus, the add-item ui has been hidden in preview mode */
+.tc-tiddler-preview-preview .kk-kara-header-ui {
+	display:none;
+}

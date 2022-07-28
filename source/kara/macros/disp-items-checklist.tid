@@ -1,0 +1,43 @@
+created: 20220726090319226
+modified: 20220728122500900
+tags: show-content
+title: $:/plugins/kookma/kara/macros/disp-items-checklist
+type: text/vnd.tiddlywiki
+
+\define toggle-action(param)
+<!-- toggle a line done [x] / undone [ ] . the lbr is used to prevent replace "[x] Hi" with "[x] Hi Jeremy"-->
+<$vars in={{{ [<row>addsuffix<lbr>] }}} out={{{ [<entry>trim[]addprefix[ ]addprefix<__param__>addsuffix<lbr>] }}} >
+  <$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]search-replace:g:<in>,<out>] }}}/>
+</$vars>
+\end
+
+\define disp-single-item()
+<!-- show a task item -->
+<$list filter="[<row>trim[]removeprefix<undoneMark>] [<row>trim[]removeprefix<undoneMarkalt>] +[limit[1]]" variable=entry>
+<$button class="tc-btn-invisible" actions="""<<toggle-action "[x]">>"""><input type=checkbox/></$button>&nbsp;<$transclude tiddler=<<entry>> field=title/>
+</$list>
+<!-- show a done item -->
+<$list filter="[<row>trim[]removeprefix<doneMark>]" variable=entry>
+<$button class="tc-btn-invisible" actions="""<<toggle-action "[ ]">>"""><input type=checkbox checked/></$button>&nbsp;<span class="kk-kara-done-item"><$transclude tiddler=<<entry>> field=title/></span>
+</$list>
+
+\end
+
+\define delete-single-item()
+<$button class="tc-btn-invisible">{{$:/plugins/kookma/kara/images/times}}
+  <$vars in={{{ [<row>addsuffix<lbr>] }}} out="" }}} >
+    <$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]search-replace:g:<in>,<out>] }}}/>
+  </$vars>
+</$button>
+\end
+
+\define kara-disp-items()
+<ul class="kk-kara-checklist">
+<$list filter="[<dblock>splitregexp[\n]!is[blank]]" variable=row>
+<li class="kk-kara-row">
+<div class="kk-kara-desc"><<disp-single-item>></div>
+<div class="kk-kara-delete"><<delete-single-item>></div>
+</li>
+</$list>
+</ul>
+\end

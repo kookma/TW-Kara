@@ -1,0 +1,14 @@
+created: 20220726101443387
+modified: 20220726113116379
+tags: 
+title: $:/plugins/kookma/kara/readme
+type: text/vnd.tiddlywiki
+
+; Kara
+Kara is a small in tiddler checklist and todo. It has a minmal UI and also lets you manually add/remove items to your checklist. Items can be simply searched using standard search. Kara does not use any system or third party tiddlers.
+
+;Code and demo
+For learning plugin features, syntax, tutorial and examples see the plugin demo and code pages
+
+* Demo: https://kookma.github.io/TW-Kara/
+* Code: https://github.com/kookma/TW-Kara

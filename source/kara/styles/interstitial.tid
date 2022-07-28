@@ -1,0 +1,23 @@
+created: 20220728121206311
+modified: 20220728121225614
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/kara/styles/interstitial
+type: text/vnd.tiddlywiki
+
+.interstitial>ul{
+	list-style: none;
+	padding:0;
+}
+.interstitial ul li:hover{
+	background-color: <<colour table-header-background>>;
+}
+.interstitial ul li strong:first-of-type {
+	padding-right:0.5em;
+}
+/* css hanging indent: https://www.htmlcenter.com/blog/css-hanging-indents/ */
+.interstitial ul li {
+  padding: 1px 5px;
+	text-indent: -3.5em;
+	padding-left: calc(5px + 3.5em);
+	border-radius:5px;
+}

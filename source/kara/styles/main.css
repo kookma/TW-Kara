@@ -1,0 +1,12 @@
+/* todo section ------------*/
+.todo{
+	display:none;
+}
+
+/* interstitial section ------------*/
+.interstitial {
+	display:none;
+}
+
+/* kara section wraps inputbox and output items. It can be customized to change the look and feel of interstitial and checklist */
+.kk-kara-ui{}

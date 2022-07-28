@@ -1,0 +1,38 @@
+created: 20220725144340300
+modified: 20220728160520381
+tags: $:/tags/Macro
+title: $:/plugins/kookma/kara/macros/checklist
+type: text/vnd.tiddlywiki
+
+\define checklist(tiddler)
+\import $:/plugins/kookma/kara/macros/add-items
+\import $:/plugins/kookma/kara/macros/add-items-checklist
+\import $:/plugins/kookma/kara/macros/disp-items-checklist
+<$let tiddler={{{ [<__tiddler__>trim[]] }}}
+      src= {{{ [<tiddler>!is[blank]then<tiddler>else<currentTiddler>] }}}
+      dataBlockStartDelimiter ="@@.todo"
+      dataBlockEndDelimiter   = "@@"  
+      doneMark="[x]"
+      undoneMark="[ ]"
+      undoneMarkalt="[]"
+      tempId={{{ [<tiddler>!is[blank]then[interstitial/$(currentTiddler)$/]addsuffix<tiddler>]
+                 :else[[checklist/]addsuffix[$(currentTiddler)$]] }}}
+      lbr="
+"      >
+<!-- extract the data block -->
+<$let dblock0 = {{{ [<src>get[text]splitregexp<dataBlockStartDelimiter>butfirst[1]] }}}
+      dblock  = {{{ [<dblock0>splitregexp<dataBlockEndDelimiter>butlast[1]] }}} >
+<section class="kk-kara-ui">
+
+<!-- display add items -->
+<<kara-add-items>>
+
+<!-- display checklist -->
+<<kara-disp-items>>
+</section>
+</$let>
+</$let>
+\end
+
+
+

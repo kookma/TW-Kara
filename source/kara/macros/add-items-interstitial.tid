@@ -1,0 +1,27 @@
+created: 20220726173817489
+modified: 20220727185846484
+tags: show-content
+title: $:/plugins/kookma/kara/macros/add-items-interstitial
+type: text/vnd.tiddlywiki
+
+\define kara-add-item-action()
+<$let			
+      note-time=<<now "0hh:0mm">>
+      item     = {{{ [<tempTid>get[text]] }}}
+      newItem  = {{{ [[*]] [<note-time>addprefix['']addsuffix['']] [<item>] +[join[ ]]}}}
+      newblock = {{{ [<dblock>addsuffix<newItem>addsuffix<lbr>] }}}
+>
+<$list filter="[<item>!is[blank]]" variable=null><!--ignore empty imput-->
+
+<$list filter="[<dblock0>is[blank]]"><!-- there is no interstitial block, create one -->
+<$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]addsuffix<lbr>] [[@@.interstitial]addsuffix<lbr>] [<newItem>addsuffix<lbr>] [[@@]] +[join[]] }}}/>
+</$list>
+
+  <$vars in= {{{ [<dataBlockStartDelimiter>] [<dblock>]   [<dataBlockEndDelimiter>] +[join[]]}}}  
+         out={{{ [<dataBlockStartDelimiter>] [<newblock>] [<dataBlockEndDelimiter>] +[join[]]}}}  >
+    <$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]search-replace:g:<in>,<out>] }}}/>
+  </$vars>
+<$action-deletetiddler $tiddler=<<tempTid>>/>
+</$list>
+</$let>	
+\end

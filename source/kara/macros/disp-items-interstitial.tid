@@ -1,0 +1,11 @@
+created: 20220726200503309
+modified: 20220726200533923
+tags: show-content
+title: $:/plugins/kookma/kara/macros/disp-items-interstitial
+type: text/vnd.tiddlywiki
+
+\define kara-disp-items()
+<div class="interstitial" style="display:block;">
+<$transclude tiddler=<<dblock>> field=title mode=block/>
+</div>
+\end

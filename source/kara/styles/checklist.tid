@@ -1,0 +1,54 @@
+created: 20220726130350339
+modified: 20220728122432718
+tags: $:/tags/Stylesheet
+title: $:/plugins/kookma/kara/styles/checklist
+type: text/vnd.tiddlywiki
+
+ul.kk-kara-checklist{
+	list-style: none;
+	padding:0;
+}
+
+/* Kara items ui */
+.kk-kara-row{
+	display: flex;	
+	width: 100%; /* for larg screen width> 960px*/
+	flex-wrap: nowrap;
+	border-radius:5px;
+}
+
+.kk-kara-row:hover {
+	/* background-color: #f6f6f6;*/
+	background-color: <<colour table-header-background>>;
+}
+
+.kk-kara-row .kk-kara-delete {
+	flex-grow:0;
+	width:15px;
+}
+
+.kk-kara-row .kk-kara-delete {
+	opacity: 0.3;
+}
+
+.kk-kara-row:hover .kk-kara-delete {
+	opacity: 1;
+}
+
+.kk-kara-row .kk-kara-desc{
+	flex-grow:1; 
+	width: calc(100% - 50px); 
+	padding-right: 10px;
+}
+/* css hanging indentation */
+.kk-kara-row .kk-kara-desc{
+	text-indent: -1.4em;
+	padding-left: calc(5px + 1.4em);
+}
+
+.kk-kara-done-item{
+	font-style:oblique;
+	opacity:0.5;
+	/*	text-decoration: line-through;*/
+	text-decoration: line-through <<colour alert-highlight>>;
+}
