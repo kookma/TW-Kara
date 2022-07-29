@@ -1,5 +1,5 @@
 created: 20220726064403475
-modified: 20220727185651108
+modified: 20220729160739761
 tags: show-content
 title: $:/plugins/kookma/kara/macros/add-items-checklist
 type: text/vnd.tiddlywiki
@@ -12,7 +12,7 @@ type: text/vnd.tiddlywiki
 >
 <$list filter="[<item>!is[blank]]" variable=null><!--ignore empty imput-->
 
-<$list filter="[<dblock0>is[blank]]"><!-- there is no checklist block, create one -->
+<$list filter="[<dblock0>is[blank]]"><!-- there is no todo block, create one -->
 <$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]addsuffix<lbr>] [<dataBlockStartDelimiter>addsuffix<lbr>] [<newItem>addsuffix<lbr>] [<dataBlockEndDelimiter>] +[join[]] }}}/>
 </$list>
 

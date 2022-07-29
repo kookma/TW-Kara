@@ -1,5 +1,5 @@
 created: 20220728121206311
-modified: 20220728121225614
+modified: 20220729142218303
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/kara/styles/interstitial
 type: text/vnd.tiddlywiki
@@ -13,11 +13,4 @@ type: text/vnd.tiddlywiki
 }
 .interstitial ul li strong:first-of-type {
 	padding-right:0.5em;
-}
-/* css hanging indent: https://www.htmlcenter.com/blog/css-hanging-indents/ */
-.interstitial ul li {
-  padding: 1px 5px;
-	text-indent: -3.5em;
-	padding-left: calc(5px + 3.5em);
-	border-radius:5px;
 }

@@ -1,10 +1,10 @@
 /* todo section ------------*/
-.todo{
+.tc-tiddler-body .todo{
 	display:none;
 }
 
 /* interstitial section ------------*/
-.interstitial {
+.tc-tiddler-body .interstitial {
 	display:none;
 }
 

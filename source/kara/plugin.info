@@ -1,10 +1,10 @@
 {
 	"title": "$:/plugins/kookma/kara",
-	"name": "Kara"
+	"name": "Kara",
 	"description": "Small plain checklist and interstitial journaling",
 	"author": "Mohammad Rahmani",
-	"version": "0.5.0",
-	"parent-plugin": "$:/plugins/kookma/thinkup"
+	"version": "0.5.1",
+	"parent-plugin": "$:/plugins/kookma/thinkup",
 	"core-version": ">=5.2.1",
 	"source": "https://github.com/kookma/TW-Kara",
 	"list": "readme history license",

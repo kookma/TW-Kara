@@ -1,5 +1,5 @@
 created: 20220726130350339
-modified: 20220728122432718
+modified: 20220729141801438
 tags: $:/tags/Stylesheet
 title: $:/plugins/kookma/kara/styles/checklist
 type: text/vnd.tiddlywiki
@@ -40,11 +40,7 @@ ul.kk-kara-checklist{
 	width: calc(100% - 50px); 
 	padding-right: 10px;
 }
-/* css hanging indentation */
-.kk-kara-row .kk-kara-desc{
-	text-indent: -1.4em;
-	padding-left: calc(5px + 1.4em);
-}
+
 
 .kk-kara-done-item{
 	font-style:oblique;
