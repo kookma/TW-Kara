@@ -15,7 +15,7 @@ type: text/vnd.tiddlywiki
       doneMark="[x]"
       undoneMark="[ ]"
       undoneMarkalt="[]"
-      tempId={{{ [<tiddler>!is[blank]then[interstitial/$(currentTiddler)$/]addsuffix<tiddler>]
+      tempId={{{ [<tiddler>!is[blank]then[checklist/$(currentTiddler)$/]addsuffix<tiddler>]
                  :else[[checklist/]addsuffix[$(currentTiddler)$]] }}}
       lbr="
 "      >
