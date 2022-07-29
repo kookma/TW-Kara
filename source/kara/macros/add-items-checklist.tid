@@ -12,7 +12,7 @@ type: text/vnd.tiddlywiki
 >
 <$list filter="[<item>!is[blank]]" variable=null><!--ignore empty imput-->
 
-<$list filter="[<dblock0>is[blank]]"><!-- there is no interstitial block, create one -->
+<$list filter="[<dblock0>is[blank]]"><!-- there is no checklist block, create one -->
 <$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]addsuffix<lbr>] [<dataBlockStartDelimiter>addsuffix<lbr>] [<newItem>addsuffix<lbr>] [<dataBlockEndDelimiter>] +[join[]] }}}/>
 </$list>
 
