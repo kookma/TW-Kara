@@ -1,10 +1,10 @@
 created: 20220726171327383
-modified: 20220728160350238
+modified: 20220801021842365
 tags: $:/tags/Macro
 title: $:/plugins/kookma/kara/macros/interstitial
 type: text/vnd.tiddlywiki
 
-\define interstitial(tiddler)
+\define interstitial(tiddler, showInput)
 \import $:/plugins/kookma/kara/macros/add-items
 \import $:/plugins/kookma/kara/macros/add-items-interstitial
 \import $:/plugins/kookma/kara/macros/disp-items-interstitial
@@ -21,8 +21,10 @@ type: text/vnd.tiddlywiki
       dblock  = {{{ [<dblock0>splitregexp<dataBlockEndDelimiter>butlast[1]] }}} >
 <section class="kk-kara-ui">		
 
-<!-- display add items -->
+<!-- display add items UI -->
+<$list filter="[<__showInput__>!match[no]]" variable=null>
 <<kara-add-items>>
+</$list>
 
 <!-- display checklist -->
 <<kara-disp-items>>

@@ -1,0 +1,42 @@
+details.kk-kara-dt  > summary {
+	list-style: none;
+	padding-left:5px;
+
+}
+
+details.kk-kara-dt   summary {
+	cursor: pointer;
+	font-weight:300;
+}
+
+details.kk-kara-dt   > summary::-webkit-details-marker {
+	display: none;
+}
+details.kk-kara-dt   {
+	user-select: none;
+}
+
+details.kk-kara-dt[open] summary svg {
+	transform: rotate(+90deg);
+}
+
+details.kk-kara-dt   summary svg {
+	transition: all 0.3s;
+	width: 1.2em;
+	height: 1.2em;
+	vertical-align: baseline;
+	float:right;
+}
+
+details.kk-kara-dt:focus {
+	outline: none;
+}
+
+/* hide details arrow by default, show it on hover */
+details.kk-kara-dt summary svg{
+	opacity:0;
+  transition: opacity 0.6s ease-in;
+}
+details.kk-kara-dt:hover summary  svg{
+	opacity:1;
+}

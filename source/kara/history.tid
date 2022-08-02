@@ -1,11 +1,12 @@
 created: 20220726101443386
-modified: 20220729103057709
+modified: 20220802180754074
 tags: 
 title: $:/plugins/kookma/kara/history
 type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Kara/#ChangeLog
 
+* ''0.6.0'' -- 2022.08.02 -- New features, update to TW 5.2.3
 * ''0.5.1'' -- 2022.07.28 -- Documentation improvement and bug fixes
 * ''0.5.0'' -- 2022.07.28 -- First public release
 * ''0.1.0'' -- 2022.07.26 -- Conceptualization, beta release

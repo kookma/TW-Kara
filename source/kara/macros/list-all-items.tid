@@ -1,0 +1,16 @@
+created: 20220801032842062
+modified: 20220801082659898
+tags: $:/tags/Macro
+title: $:/plugins/kookma/kara/macros/list-all-items
+type: text/vnd.tiddlywiki
+
+\define list-all-items(filter:"[!is[system]]", type:"", showInput:"no")
+\define dt-arrow() <svg viewBox="0 0 20 20" class=""><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z" /></svg>
+<$list filter="""$filter$  :and[search:text[@@.$type$]] :filter[{!!text}splitregexp[\n]trim[]!is[blank]regexp:title[^@@.$type$]]""">
+<details class="kk-kara-dt" open>
+<summary><$link/><$list filter="[<__type__>match[todo]]" variable=null> | <$view field=modified format=date template="DDth mmm YYYY at 0hh12:0mmam"/></$list><<dt-arrow>></summary>
+<$list filter="[<__type__>match[todo]then[checklist]] [<__type__>match[interstitial]then[interstitial]] :and[first[]]" variable=macName>
+<blockquote><$macrocall $name=<<macName>> showInput=<<__showInput__>> /></blockquote>
+</$list>
+</details>
+\end
