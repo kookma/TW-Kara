@@ -1,5 +1,5 @@
 created: 20220727183257363
-modified: 20220803035713332
+modified: 20220803045914476
 tags: show-content
 title: $:/plugins/kookma/kara/macros/add-items
 type: text/vnd.tiddlywiki
@@ -16,7 +16,7 @@ type: text/vnd.tiddlywiki
  tag="input"
  class="kk-kara-input-textbox"
  placeholder=<<editTextPlaceholder>>
- default="" minHeight="1em" focus="yes"
+ default="" minHeight="1em" focus=<<focusStatus>>
  />
 </$keyboard> 
 </$keyboard> 

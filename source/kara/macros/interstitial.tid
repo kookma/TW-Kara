@@ -1,10 +1,10 @@
 created: 20220726171327383
-modified: 20220803040313123
+modified: 20220803045850404
 tags: $:/tags/Macro
 title: $:/plugins/kookma/kara/macros/interstitial
 type: text/vnd.tiddlywiki
 
-\define interstitial(tiddler, showInput)
+\define interstitial(tiddler, showInput, focus:"yes")
 \import $:/plugins/kookma/kara/macros/add-items
 \import $:/plugins/kookma/kara/macros/add-items-interstitial
 \import $:/plugins/kookma/kara/macros/disp-items-interstitial
@@ -15,6 +15,7 @@ type: text/vnd.tiddlywiki
       tempId={{{ [<tiddler>!is[blank]then[interstitial/$(currentTiddler)$/]addsuffix<tiddler>]
                  :else[[interstitial/]addsuffix[$(currentTiddler)$]] }}}			
       editTextPlaceholder="add new interstitial note"
+      focusStatus=<<__focus__>>			
       lbr="
 "      >
 <!-- extract the data block -->
