@@ -1,5 +1,5 @@
 created: 20220725144340300
-modified: 20220801021301037
+modified: 20220803035945141
 tags: $:/tags/Macro
 title: $:/plugins/kookma/kara/macros/checklist
 type: text/vnd.tiddlywiki
@@ -17,6 +17,7 @@ type: text/vnd.tiddlywiki
       undoneMarkalt="[]"
       tempId={{{ [<tiddler>!is[blank]then[checklist/$(currentTiddler)$/]addsuffix<tiddler>]
                  :else[[checklist/]addsuffix[$(currentTiddler)$]] }}}
+      editTextPlaceholder="add new todo item"
       lbr="
 "      >
 <!-- extract the data block -->
