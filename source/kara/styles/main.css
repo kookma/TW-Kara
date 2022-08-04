@@ -1,12 +1,15 @@
 /* todo section ------------*/
-.tc-tiddler-body .todo{
+.tc-tiddler-body p.todo{
 	display:none;
 }
 
 /* interstitial section ------------*/
-.tc-tiddler-body .interstitial {
+.tc-tiddler-body p.interstitial {
 	display:none;
 }
 
+
 /* kara section wraps inputbox and output items. It can be customized to change the look and feel of interstitial and checklist */
 .kk-kara-ui{}
+
+/* NOTE: TW 5.2.3 and older produce a p tag for @@.class that is why exact selector is used above for .todo Projectify plugin also uses .todo class.*/
