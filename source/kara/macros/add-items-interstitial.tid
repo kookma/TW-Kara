@@ -1,5 +1,5 @@
 created: 20220726173817489
-modified: 20220727185846484
+modified: 20220804193603868
 tags: show-content
 title: $:/plugins/kookma/kara/macros/add-items-interstitial
 type: text/vnd.tiddlywiki
@@ -14,7 +14,7 @@ type: text/vnd.tiddlywiki
 <$list filter="[<item>!is[blank]]" variable=null><!--ignore empty imput-->
 
 <$list filter="[<dblock0>is[blank]]"><!-- there is no interstitial block, create one -->
-<$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]addsuffix<lbr>] [[@@.interstitial]addsuffix<lbr>] [<newItem>addsuffix<lbr>] [[@@]] +[join[]] }}}/>
+<$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]addsuffix<lbr>addsuffix<lbr>] [[@@.interstitial]addsuffix<lbr>] [<newItem>addsuffix<lbr>] [[@@]] +[join[]] }}}/>
 </$list>
 
   <$vars in= {{{ [<dataBlockStartDelimiter>] [<dblock>]   [<dataBlockEndDelimiter>] +[join[]]}}}  
