@@ -1,10 +1,11 @@
 created: 20220725144340300
-modified: 20220803045801148
+modified: 20220820182518359
 tags: $:/tags/Macro
 title: $:/plugins/kookma/kara/macros/checklist
 type: text/vnd.tiddlywiki
 
-\define checklist(tiddler, showInput, focus:"yes")
+\define checklist(tiddler, showInput, focus:"yes", mode:"")
+\import $:/plugins/kookma/kara/macros/definitions
 \import $:/plugins/kookma/kara/macros/add-items
 \import $:/plugins/kookma/kara/macros/add-items-checklist
 \import $:/plugins/kookma/kara/macros/disp-items-checklist
@@ -19,6 +20,7 @@ type: text/vnd.tiddlywiki
                  :else[[checklist/]addsuffix[$(currentTiddler)$]] }}}
       editTextPlaceholder="add new todo item"
       focusStatus=<<__focus__>>
+      displayMode={{{ [<checklistDisplayConfig>get[text]] [<__mode__>] :and[first[]] }}}
       lbr="
 "      >
 <!-- extract the data block -->

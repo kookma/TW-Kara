@@ -1,5 +1,5 @@
 created: 20220726090319226
-modified: 20220805052358444
+modified: 20220820182624576
 tags: show-content
 title: $:/plugins/kookma/kara/macros/disp-items-checklist
 type: text/vnd.tiddlywiki
@@ -32,12 +32,24 @@ type: text/vnd.tiddlywiki
 \end
 
 \define kara-disp-items()
+<$let defaultDispFilter= "[<dblock>splitregexp[\n]!is[blank]]"
+      sortedDispFilter=  "[<dblock>splitregexp[\n]!is[blank]trim:prefix[]sort[]]"
+      dispFilter={{{ [<displayMode>match[sort]then<sortedDispFilter>else<defaultDispFilter>]}}}
+>			
+
 <ul class="kk-kara-checklist">
-<$list filter="[<dblock>splitregexp[\n]!is[blank]]" variable=row>
+<$list filter=<<dispFilter>> variable=row>
 <li class="kk-kara-row">
 <div class="kk-kara-desc"><<disp-single-item>></div>
 <div class="kk-kara-delete"><<delete-single-item>></div>
 </li>
 </$list>
 </ul>
+
+</$let>
 \end
+
+<!-- checklist items can be shown as entered irrespective of their status (completed: done, or incompleted)
+and they can be separately: incomplete/tasks first, completed tasks (done) last.
+The display format is determined using a global config, and mode input parameter. global config has higher priority
+-->
