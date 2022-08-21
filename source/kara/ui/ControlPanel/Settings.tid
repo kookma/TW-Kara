@@ -1,7 +1,7 @@
 caption: Kara
 created: 20220820184218005
 list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
-modified: 20220820184918605
+modified: 20220821033917060
 tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
 title: $:/plugins/kookma/kara/ui/ControlPanel/Settings
 type: text/vnd.tiddlywiki
@@ -12,7 +12,7 @@ These settings let you customise the behaviour of Kara plugin.
 ---
 
 ;Show Kara setting in more sidebar
-:<$checkbox tiddler="$:/plugins/kookma/kara/ui/ControlPanel/Settings" tag="$:/tags/MoreSideBar"> Show setting in more sidebar</$checkbox>
+:<$checkbox tiddler="$:/plugins/kookma/kara/ui/ControlPanel/Settings" tag="$:/tags/MoreSideBar"> Show setting in "More" sidebar</$checkbox>
 
 ;Options
 :<$checkbox tiddler=<<interstitialDisplayConfig>> field="text" checked="reverse"> Interstitial notes in reverse chronological order</$checkbox>
