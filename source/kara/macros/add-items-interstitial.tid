@@ -1,12 +1,12 @@
 created: 20220726173817489
-modified: 20220804193603868
+modified: 20220925053726294
 tags: show-content
 title: $:/plugins/kookma/kara/macros/add-items-interstitial
 type: text/vnd.tiddlywiki
 
 \define kara-add-item-action()
 <$let			
-      note-time=<<now "0hh:0mm">>
+      note-time=<<now format:'0hh:0mm'>>
       item     = {{{ [<tempTid>get[text]] }}}
       newItem  = {{{ [[*]] [<note-time>addprefix['']addsuffix['']] [<item>] +[join[ ]]}}}
       newblock = {{{ [<dblock>addsuffix<newItem>addsuffix<lbr>] }}}
