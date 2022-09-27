@@ -1,7 +1,5 @@
 caption: Kara
-created: 20220820184218005
 list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
-modified: 20220821033917060
 tags: $:/tags/ControlPanel/SettingsTab $:/tags/MoreSideBar
 title: $:/plugins/kookma/kara/ui/ControlPanel/Settings
 type: text/vnd.tiddlywiki

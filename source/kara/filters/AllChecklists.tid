@@ -1,0 +1,5 @@
+description: All checklists
+filter: [!is[system]]  :and[search:text[@@.todo]] :filter[{!!text}splitregexp[\n]trim[]!is[blank]regexp:title[^@@.todo$]]
+tags: $:/tags/Filter
+title: $:/plugins/kookma/kara/filters/AllChecklists
+type: text/vnd.tiddlywiki
