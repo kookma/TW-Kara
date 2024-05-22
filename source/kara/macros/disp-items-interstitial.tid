@@ -4,7 +4,7 @@ type: text/vnd.tiddlywiki
 
 \define kara-disp-items()
 <div class="interstitial" style="display:block;">
-<$list filter="[<displayMode>match[reverse]]" emptyMessage='<$transclude tiddler=<<dblock>> field=title mode=block/>'>
+<$list filter="[<displayMode>match[reverse]]" emptyMessage='<$transclude tiddler=<<dblock>> field=title mode=block/>' variable=ignore>
 <$transclude tiddler={{{ [<dblock>splitregexp[\n]!is[blank]trim:prefix[]trim[*]trim:prefix[]!sort[]addprefix[* ]] :and[join<lbr>] }}} field=title mode=block/>
 </$list>
 </div>
