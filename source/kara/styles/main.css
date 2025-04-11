@@ -6,6 +6,7 @@
 
 /* interstitial section ------------*/
 .tc-tiddler-body ul.interstitial,
+.tc-sidebar-tabs-main ul.interstitial,
 .tc-tiddler-preview-preview ul.interstitial{
 	display:none;
 }
