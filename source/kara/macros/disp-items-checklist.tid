@@ -1,24 +1,25 @@
-tags: show-content
 title: $:/plugins/kookma/kara/macros/disp-items-checklist
 type: text/vnd.tiddlywiki
 
 \define toggle-action(param)
-<!-- toggle a line done [x] / undone [ ] . the lbr is used to prevent replace "[x] Hi" with "[x] Hi Jeremy"-->
-<$vars in={{{ [<row>addsuffix<lbr>] }}} out={{{ [<entry>trim[]addprefix[ ]addprefix<__param__>addsuffix<lbr>] }}} >
-  <$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]search-replace:g:<in>,<out>] }}}/>
-</$vars>
+<!-- toggle a line done/undone. the lbr is used to prevent replace "[x] Hi" with "[x] Hi Jeremy"-->
+<$let param={{{[<__param__>match[done]then<doneMark>else<undoneMark>]}}} 
+      in={{{ [<row>addsuffix<lbr>] }}}
+      out={{{ [<entry>trim[]addprefix[ ]addprefix<param>addsuffix<lbr>] }}}
+   >
+     <$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]search-replace:g:<in>,<out>] }}}/>
+</$let>
 \end
 
 \define disp-single-item()
 <!-- show a task item -->
-<$list filter="[<row>trim[]removeprefix<undoneMark>] [<row>trim[]removeprefix<undoneMarkalt>] +[limit[1]]" variable=entry>
-<$button class="tc-btn-invisible" actions="""<<toggle-action "[x]">>"""><input type=checkbox/></$button>&nbsp;<$transclude tiddler=<<entry>> field=title/>
+<$list filter="[<row>regexp<undoneMarkPattern>splitregexp<undoneMarkPattern>butfirst[]]" variable=entry><!-- butfirst ignores first empty output-->
+	<$button class="tc-btn-invisible" actions="""<<toggle-action "done">>""" ><input type=checkbox/></$button>&nbsp;<$transclude tiddler=<<entry>> field=title/>
 </$list>
 <!-- show a done item -->
-<$list filter="[<row>trim[]removeprefix<doneMark>]" variable=entry>
-<$button class="tc-btn-invisible" actions="""<<toggle-action "[ ]">>"""><input type=checkbox checked/></$button>&nbsp;<span class="kk-kara-done-item"><$transclude tiddler=<<entry>> field=title/></span>
+<$list filter="[<row>regexp<doneMarkPattern>splitregexp<doneMarkPattern>butfirst[]]" variable=entry><!-- butfirst ignores first empty output-->
+	<$button class="tc-btn-invisible" actions="""<<toggle-action "undone">>""" ><input type=checkbox checked/></$button>&nbsp;<span class="kk-kara-done-item"><$transclude tiddler=<<entry>> field=title/></span>
 </$list>
-
 \end
 
 \define delete-single-item()
@@ -29,14 +30,17 @@ type: text/vnd.tiddlywiki
 </$button>
 \end
 
+
+
 \define kara-disp-items()
 <$let defaultDispFilter= "[<dblock>splitregexp[\n]!is[blank]]"
       sortedDispFilter=  "[<dblock>splitregexp[\n]!is[blank]trim:prefix[]sort[]]"
       dispFilter={{{ [<displayMode>match[sort]then<sortedDispFilter>else<defaultDispFilter>]}}}
+      itemPattern={{{ [<doneMarkPattern>] [<undoneMarkPattern>] +[join[|]] }}}
 >			
 
 <ul class="kk-kara-checklist">
-<$list filter=<<dispFilter>> variable=row>
+<$list filter="[subfilter<dispFilter>trim[]] :filter[regexp<itemPattern>]" variable=row>
 <li class="kk-kara-row">
 <div class="kk-kara-desc"><<disp-single-item>></div>
 <div class="kk-kara-delete"><<delete-single-item>></div>

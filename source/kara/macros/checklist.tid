@@ -13,7 +13,8 @@ type: text/vnd.tiddlywiki
       dataBlockEndDelimiter   = "@@"  
       doneMark="[x]"
       undoneMark="[ ]"
-      undoneMarkalt="[]"
+      doneMarkPattern="^\[x\]"
+      undoneMarkPattern="^\[\s?\]"
       tempId={{{ [<tiddler>!is[blank]then[checklist/$(currentTiddler)$/]addsuffix<tiddler>]
                  :else[[checklist/]addsuffix[$(currentTiddler)$]] }}}
       editTextPlaceholder="add new todo item"
@@ -22,8 +23,8 @@ type: text/vnd.tiddlywiki
       lbr="
 "      >
 <!-- extract the data block -->
-<$let dblock0 = {{{ [<src>get[text]splitregexp<dataBlockStartDelimiter>butfirst[1]] }}}
-      dblock  = {{{ [<dblock0>splitregexp<dataBlockEndDelimiter>butlast[1]] }}} >
+<$let dblock0 = {{{ [<src>get[text]splitregexp:m[^@@\.todo]butfirst[1]] }}}
+      dblock  = {{{ [<dblock0>splitregexp:m[^@@]butlast[1]] }}} >
 <section class="kk-kara-ui">
 
 <!-- display add items UI -->
@@ -37,6 +38,4 @@ type: text/vnd.tiddlywiki
 </$let>
 </$let>
 \end
-
-
 

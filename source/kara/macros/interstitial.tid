@@ -19,8 +19,8 @@ type: text/vnd.tiddlywiki
       lbr="
 "      >
 <!-- extract the data block -->
-<$let dblock0 = {{{ [<src>get[text]splitregexp<dataBlockStartDelimiter>butfirst[1]] }}}
-      dblock  = {{{ [<dblock0>splitregexp<dataBlockEndDelimiter>butlast[1]] }}} >
+<$let dblock0 = {{{ [<src>get[text]splitregexp:m[^@@\.interstitial]butfirst[1]] }}}
+      dblock  = {{{ [<dblock0>splitregexp:m[^@@]butlast[1]] }}} >
 <section class="kk-kara-ui">		
 
 <!-- display add items UI -->

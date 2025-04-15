@@ -1,20 +1,21 @@
-tags: show-content
+tags: 
 title: $:/plugins/kookma/kara/macros/disp-items-interstitial
 type: text/vnd.tiddlywiki
 
 \define kara-disp-items()
 <div class="interstitial" style="display:block;">
 <$list filter="[<displayMode>regexp[reverse|sort]]" emptyMessage='<$transclude tiddler=<<dblock>> field=title mode=block/>' variable=ignore>
-<$list filter="[<displayMode>match[reverse]]" variable=ignore>
-<$transclude tiddler={{{ [<dblock>splitregexp[\n]!is[blank]trim:prefix[]trim[*]trim:prefix[]!sort[]addprefix[* ]] :and[join<lbr>] }}} field=title mode=block/>
+	<$list filter="[<displayMode>match[reverse]]" variable=ignore>
+		<$transclude tiddler={{{ [<dblock>splitregexp[\n]!is[blank]splitregexp[\s*\*\s*]!sort[]addprefix[* ]] :and[join<lbr>] }}} field=title mode=block/>
+	</$list>
+	<$list filter="[<displayMode>match[sort]]" variable=ignore>
+		<$transclude tiddler={{{ [<dblock>splitregexp[\n]!is[blank]splitregexp[\s*\*\s*]sort[]addprefix[* ]] :and[join<lbr>] }}} field=title mode=block/>
+	</$list>
 </$list>
-<$list filter="[<displayMode>match[sort]]" variable=ignore>
-<$transclude tiddler={{{ [<dblock>splitregexp[\n]!is[blank]trim:prefix[]trim[*]trim:prefix[]sort[]addprefix[* ]] :and[join<lbr>] }}} field=title mode=block/>
-</$list>
-</$list>
-
 </div>
 \end
+
+
 
 <!--
 the order param is used to control the chornological order of notes

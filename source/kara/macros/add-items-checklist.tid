@@ -1,4 +1,3 @@
-tags: show-content
 title: $:/plugins/kookma/kara/macros/add-items-checklist
 type: text/vnd.tiddlywiki
 
@@ -10,15 +9,15 @@ type: text/vnd.tiddlywiki
 >
 <$list filter="[<item>!is[blank]]" variable=null><!--ignore empty imput-->
 
-<$list filter="[<dblock0>is[blank]]"><!-- there is no todo block, create one -->
-<$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]addsuffix<lbr>addsuffix<lbr>] [<dataBlockStartDelimiter>addsuffix<lbr>] [<newItem>addsuffix<lbr>] [<dataBlockEndDelimiter>] +[join[]] }}}/>
-</$list>
+	<$list filter="[<dblock0>is[blank]]"><!-- there is no todo block, create one -->
+	<$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]addsuffix<lbr>addsuffix<lbr>] [<dataBlockStartDelimiter>addsuffix<lbr>] [<newItem>addsuffix<lbr>] [<dataBlockEndDelimiter>] +[join[]] }}}/>
+	</$list>
 
-  <$vars in= {{{ [<dataBlockStartDelimiter>] [<dblock>]   [<dataBlockEndDelimiter>] +[join[]]}}}  
-         out={{{ [<dataBlockStartDelimiter>] [<newblock>] [<dataBlockEndDelimiter>] +[join[]]}}}  >
-    <$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]search-replace:g:<in>,<out>] }}}/>
-  </$vars>
-<$action-deletetiddler $tiddler=<<tempTid>>/>
+	<$vars in= {{{ [<dataBlockStartDelimiter>] [<dblock>]   [<dataBlockEndDelimiter>] +[join[]]}}}  
+				 out={{{ [<dataBlockStartDelimiter>] [<newblock>] [<dataBlockEndDelimiter>] +[join[]]}}}  >
+						<$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]search-replace:g:<in>,<out>] }}}/>
+	</$vars>
+	<$action-deletetiddler $tiddler=<<tempTid>>/>
 </$list>
 </$let>	
 \end

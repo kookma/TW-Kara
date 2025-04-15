@@ -1,12 +1,16 @@
 {
-	"title": "$:/plugins/kookma/kara",
-	"name": "Kara",
-	"description": "Small plain checklist and interstitial journaling",
-	"author": "Mohammad Rahmani",
-	"version": "0.8.1",
-	"core-version": ">=5.2.2",
-	"source": "https://github.com/kookma/TW-Kara",
-	"list": "readme history license",
-	"dependents": "",
-	"plugin-type": "plugin"
+    "title": "$:/plugins/kookma/kara",
+    "version": "0.9.0",
+    "stability": "STABILITY_2_STABLE",
+    "name": "Kara",
+    "description": "Small plain checklist and interstitial journaling",
+    "author": "Mohammad Rahmani",
+    "source": "https://github.com/kookma/TW-Kara",
+    "list": "readme license history",
+    "plugin-priority": "",
+    "parent-plugin": "",
+    "dependents": "",
+    "plugin-type": "plugin",
+    "core-version": ">=5.2.1",
+    "packaged-by": "Gatha on 16th April 2025, 00:04:36"
 }

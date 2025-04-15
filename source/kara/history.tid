@@ -4,6 +4,7 @@ type: text/vnd.tiddlywiki
 
 Full change log  https://kookma.github.io/TW-Kara/#ChangeLog
 
+* ''0.9.0'' -- 2025.04.15 -- Code improved by ysing regular expression and upadet to TW 5.3.6
 * ''0.7.3'' -- 2022.09.27 -- New search filter, bug fixes
 * ''0.6.4'' -- 2022.08.05 -- New features, update to TW 5.2.3
 * ''0.5.1'' -- 2022.07.28 -- Documentation improvement and bug fixes
