@@ -16,10 +16,8 @@ type: text/vnd.tiddlywiki
 \end
 
 
-
 <!--
-the order param is used to control the chornological order of notes
-default is as they are added, the reverse is, latest first.
-Defensive programming: the trim spaces, and star (*) and adding the star with space (* ) is to handle manually added notes
-where, user may add extra spaces before or after start(*)
+The "order" parameter is used to control the chronological order of notes. By default, notes are listed in the order they are added, but in reverse, the latest appears first. Sorting was added in Kara 0.9.0 and is useful if the user manually adds notes and still prefers the latest to come last.
+
+Defensive programming: trimming spaces, adding stars (*), and handling stars with spaces (* ) is to accommodate manually added notes where users may include extra spaces before or after the star (*).
 -->

@@ -1,6 +1,6 @@
 {
     "title": "$:/plugins/kookma/kara",
-    "version": "0.9.0",
+    "version": "0.9.5",
     "stability": "STABILITY_2_STABLE",
     "name": "Kara",
     "description": "Small plain checklist and interstitial journaling",
@@ -12,5 +12,5 @@
     "dependents": "",
     "plugin-type": "plugin",
     "core-version": ">=5.2.1",
-    "packaged-by": "Gatha on 16th April 2025, 00:04:36"
+    "packaged-by": "Gatha on 17th April 2025, 10:45:10"
 }

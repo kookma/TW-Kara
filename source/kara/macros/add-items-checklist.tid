@@ -13,10 +13,10 @@ type: text/vnd.tiddlywiki
 	<$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]addsuffix<lbr>addsuffix<lbr>] [<dataBlockStartDelimiter>addsuffix<lbr>] [<newItem>addsuffix<lbr>] [<dataBlockEndDelimiter>] +[join[]] }}}/>
 	</$list>
 
-	<$vars in= {{{ [<dataBlockStartDelimiter>] [<dblock>]   [<dataBlockEndDelimiter>] +[join[]]}}}  
+	<$let in= {{{ [<dataBlockStartDelimiter>] [<dblock>]   [<dataBlockEndDelimiter>] +[join[]]}}}  
 				 out={{{ [<dataBlockStartDelimiter>] [<newblock>] [<dataBlockEndDelimiter>] +[join[]]}}}  >
 						<$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]search-replace:g:<in>,<out>] }}}/>
-	</$vars>
+	</$let>
 	<$action-deletetiddler $tiddler=<<tempTid>>/>
 </$list>
 </$let>	

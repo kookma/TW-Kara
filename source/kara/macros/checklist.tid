@@ -19,7 +19,7 @@ type: text/vnd.tiddlywiki
                  :else[[checklist/]addsuffix[$(currentTiddler)$]] }}}
       editTextPlaceholder="add new todo item"
       focusStatus=<<__focus__>>
-      displayMode={{{ [<checklistDisplayConfig>get[text]] [<__mode__>] :and[first[]] }}}
+      displayMode={{{ [<checklistDisplayConfig>get[text]] [<__mode__>] :and[first[]] }}}	
       lbr="
 "      >
 <!-- extract the data block -->

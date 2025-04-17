@@ -3,7 +3,7 @@ type: text/vnd.tiddlywiki
 
 \define kara-add-item-action()
 <$let			
-      note-time=<<now format:'0hh:0mm'>>
+      note-time=<<now format:'$(timeFormat)$'>>
       item     = {{{ [<tempTid>get[text]] }}}
       newItem  = {{{ [[*]] [<note-time>addprefix['']addsuffix['']] [<item>] +[join[ ]]}}}
       newblock = {{{ [<dblock>addsuffix<newItem>addsuffix<lbr>] }}}
@@ -14,10 +14,10 @@ type: text/vnd.tiddlywiki
 <$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]addsuffix<lbr>addsuffix<lbr>] [[@@.interstitial]addsuffix<lbr>] [<newItem>addsuffix<lbr>] [[@@]] +[join[]] }}}/>
 </$list>
 
-  <$vars in= {{{ [<dataBlockStartDelimiter>] [<dblock>]   [<dataBlockEndDelimiter>] +[join[]]}}}  
+  <$let in= {{{ [<dataBlockStartDelimiter>] [<dblock>]   [<dataBlockEndDelimiter>] +[join[]]}}}  
          out={{{ [<dataBlockStartDelimiter>] [<newblock>] [<dataBlockEndDelimiter>] +[join[]]}}}  >
     <$action-setfield $tiddler=<<src>> text={{{ [<src>get[text]search-replace:g:<in>,<out>] }}}/>
-  </$vars>
+  </$let>
 <$action-deletetiddler $tiddler=<<tempTid>>/>
 </$list>
 </$let>	

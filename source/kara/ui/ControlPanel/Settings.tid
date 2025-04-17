@@ -12,6 +12,14 @@ These settings let you customise the behaviour of Kara plugin.
 :<$checkbox tiddler="$:/plugins/kookma/kara/ui/ControlPanel/Settings" tag="$:/tags/MoreSideBar"> Show setting in "More" sidebar</$checkbox>
 
 ;Options
-:<$checkbox tiddler=<<interstitialDisplayConfig>> field="text" checked="reverse"> Interstitial notes in reverse chronological order</$checkbox>
-:<$checkbox tiddler=<<checklistDisplayConfig>>    field="text" checked="sort"> Sort checklist items, display completed at the bottom</$checkbox>
+:<$checkbox tiddler=<<interstitialDisplayConfig>>    field="text" checked="reverse"> Interstitial notes in reverse chronological order (descending)</$checkbox>
+:<$checkbox tiddler=<<interstitialDisplayConfig>>    field="text" checked="sort"> Interstitial notes in chronological order (ascending)</$checkbox>
+:<$checkbox tiddler=<<checklistDisplayConfig>>       field="text" checked="sort"> Sort checklist items, display completed at the bottom</$checkbox>
 
+;Time format
+:Interstitial time format : <$edit-text tiddler=<<interstitialTimeFormatConfig>> field=text placeholder="0hh:0mm" tag=input /> [[Learn more|https://tiddlywiki.com/#DateFormat]]
+
+
+<!--
+: <label class="kk-fav-label">Interstitial time format</label><$edit-text tiddler="$:/config/favorites/modifierkey/expand-folder" tag=input default="" placeholder="a moifier key like ctrl" class="kk-fav-input"/> + <kbd>click</kbd>
+-->

@@ -2,7 +2,7 @@ tags: $:/tags/Macro
 title: $:/plugins/kookma/kara/macros/interstitial
 type: text/vnd.tiddlywiki
 
-\define interstitial(tiddler, showInput, focus:"yes", mode:"")
+\define interstitial(tiddler, showInput, focus:"yes", mode:"", timeFormat:"0hh:0mm")
 \import $:/plugins/kookma/kara/macros/definitions
 \import $:/plugins/kookma/kara/macros/add-items
 \import $:/plugins/kookma/kara/macros/add-items-interstitial
@@ -15,7 +15,8 @@ type: text/vnd.tiddlywiki
                  :else[[interstitial/]addsuffix[$(currentTiddler)$]] }}}			
       editTextPlaceholder="add new interstitial note"
       focusStatus=<<__focus__>>
-      displayMode={{{ [<interstitialDisplayConfig>get[text]] [<__mode__>] :and[first[]] }}}
+      displayMode={{{ [<interstitialDisplayConfig>get[text]] [<__mode__>] :and[first[]]         }}}
+      timeFormat={{{ [<interstitialTimeFormatConfig>get[text]] [<__timeFormat__>] :and[first[]] }}}					
       lbr="
 "      >
 <!-- extract the data block -->
