@@ -37,6 +37,10 @@ ul.kk-kara-checklist{
 	flex-grow:1; 
 	width: calc(100% - 50px); 
 	padding-right: 10px;
+	/* solve the issue of indentation for items span overal multiple lines */
+	padding-left: 1.5em; /* Add space on the left */
+	text-indent: -1.5em; /* Align the first line  */
+
 }
 
 

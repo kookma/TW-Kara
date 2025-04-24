@@ -9,6 +9,20 @@ type: text/vnd.tiddlywiki
 .interstitial ul li:hover{
 	background-color: <<colour table-header-background>>;
 }
+
+/* This section handles the alignment of long text within items, when the text spans multiple lines */  
+.interstitial ul li {
+	display: flex; /* Flexbox layout for alignment */
+	align-items: flex-start; /* Align items at the top */
+	gap: 0.5em; /* Space between the timestamp and text */
+}
+
 .interstitial ul li strong:first-of-type {
-	padding-right:0.5em;
+	flex-shrink: 0; /* Prevent the timestamp from shrinking */
+	text-align: left; /* Align timestamp text */
+}
+
+.interstitial ul li span {
+	flex-grow: 1; /* Allow the text to occupy the remaining space */
+	text-align: left; /* Align multi-line text to the left */
 }
